@@ -2,8 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 def scrape_ebay(product_name):
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'}
+    headers = {"Give your user agent}
     url = f'https://www.ebay.com/sch/i.html?_nkw={product_name}'
     response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.content, 'html.parser')
