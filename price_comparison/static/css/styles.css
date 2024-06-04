@@ -1,0 +1,73 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: #99ccea;
+  }
+
+  h1{
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .search-form {
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  .products-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .products {
+    width: 48%;
+  }
+  
+  .products h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .list-group-item {
+    border: none;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .list-group-item h4 {
+    margin-bottom: 5px;
+  }
+  
+  .list-group-item p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .amazon-products {
+    background-color: #f0c14b;
+    padding: 20px;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  
+  .ebay-products {
+    background-color: #ffe600;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .search-form {
+    width: 50%;
+    margin: 0 auto;
+  }

@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Price Comparison</title>
+    <!-- Link Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link your CSS file here -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Product Price Comparison</h1>
+        <form method="post" class="search-form mx-auto">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="product_name">Enter Product Name:</label>
+                <input type="text" class="form-control" id="product_name" name="product_name">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        
+        <div class="products-container mt-5">
+            {% if amazon_products %}
+            <div class="products amazon-products">
+                <h2>Amazon Products:</h2>
+                <ul class="list-group">
+                    {% for product in amazon_products %}
+                    <li class="list-group-item">
+                        <h4>Product name: {{ product.Name }}</h4>
+                        <p>Product Price: {{ product.Price }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            {% if ebay_products %}
+            <div class="products ebay-products">
+                <h2>Ebay Products:</h2>
+                <ul class="list-group">
+                    {% for product in ebay_products %}
+                    <li class="list-group-item">
+                        <h4>Product name: {{ product.Name }}</h4>
+                        <p>Product Price: {{ product.Price }}</p>
+                    </li> 
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, placed at the end of the document -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
