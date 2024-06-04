@@ -3,8 +3,7 @@ from bs4 import BeautifulSoup
 
 # Function to scrape Amazon
 def scrape_amazon(product_name):
-    headers = {
-        "Give your user agent"}
+    headers = {"Give your user agent"}
     product_name = '+'.join(product_name.split())
     amazon_url = f'https://www.amazon.in/s?k={product_name}'
     response = requests.get(amazon_url, headers=headers)
